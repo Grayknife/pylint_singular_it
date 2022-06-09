@@ -1,0 +1,1 @@
+# pylint_singular_it
