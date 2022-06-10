@@ -39,6 +39,13 @@ We created an example directory ``example_extension`` with all its necessary fil
   - optional: update ``install_requires``
   - optional: update ``README.md``
 
+### Verify extension
+1. Install it locally: 
+   - ``cd`` into extension root directory
+   - Run ``pip install -e .``
+2. Create an Error test file:
+   - Create an example file `test.py` and insert a failure in that file you want to check. 
+3. Run ``pylint test.py --load-plugins <EXTENSION_NAME>``
 
 ### Build a package extension
 
@@ -48,7 +55,7 @@ We created an example directory ``example_extension`` with all its necessary fil
   - Rename ``src/example_extension.py`` and modify it to your needs.
   - Run ``python -m build``. A `dist` directory will be created with your packaged extension
 - Optional: Upload the extension to ``pypi``
-  - ``twine upload dist/pylint_sit-<NEW_BUILD_VERSION>*`` & username and password are required
+  - Run ``twine upload dist/pylint_sit-<NEW_BUILD_VERSION>*`` & username and password are required
 
 
 ### Contribute
