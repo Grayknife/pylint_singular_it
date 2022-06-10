@@ -28,7 +28,7 @@ We created an example directory ``example_extension`` with all its necessary fil
 3. Install the packages from ``requirements.txt``: `pip install -r requirements.txt`
 4. Rename ``src/example_extension.py`` and modify it to your needs.
 5. Run ``python -m build``. A `dist` directory will be created with your packaged extension
-7. TODO verify extension
+7. Verify extension reading the paragraph **Verify extension**
 
 
 ### Update existing extension
