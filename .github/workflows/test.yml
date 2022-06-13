@@ -22,9 +22,11 @@ jobs:
         run: |
           python -m pip install -r requirements.txt
       - name: Python Semantic Release
+        env: # Or as an environment variable
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "info@singular-it.de"
           git config --global user.name "DeployBot"
           python -m pip install python-semantic-release==7.29.1
-          semantic-release publish --define GL_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          semantic-release publish
 
