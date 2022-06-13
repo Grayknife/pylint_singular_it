@@ -2,23 +2,20 @@ name: Test
 
 on:
   push:
-    branches: ["feature/test-ci"]
+    branches: [ "feature/test-ci" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency: release
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
-        id: semantic
+      - name: Python Semantic Release
+        uses: relekang/python-semantic-release@master
         with:
-          extra_plugins: |
-            @semantic-release/git
-            @semantic-release/changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Test
-        run: echo "Hello World"
+          directory: ./pylint_sit
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          repository_username: __token__
+#          repository_password: ${{ secrets.PYPI_TOKEN }}
